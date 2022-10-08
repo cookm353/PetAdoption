@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Pets{% endblock %}
+
+{% block content %}
+    <h1>Pets</h1>
+    {% for pet in pets %}
+        <div id="petsDisplay" class="flex">
+            <div id="petDisplay">
+                {% if pet.photo_url %}
+                <img src="{{pet.photo_url}}" alt="">
+                {% endif %}
+                {% if pet.available %}
+                <p><a href="">{{pet.name}}</a> is available!</p>
+                {% else %}
+                <p><a href="">{{pet.name}}</a> isn't available.</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
