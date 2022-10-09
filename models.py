@@ -26,6 +26,9 @@ class Pet(db.Model):
     available = db.Column(db.Boolean, nullable=False,
             default=True)
     
+    def __repr__(self):
+        return f"<Pet name={self.name} species={self.species} available={self.available}>"
+    
     def get_pets():
         return Pet.query.all()
         

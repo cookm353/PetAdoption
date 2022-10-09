@@ -8,13 +8,13 @@ def main():
 
     Pet.query.delete()
     
-    tom = Pet(name='Tom', species='Cat', 
+    tom = Pet(name='Tom', species='cat', 
               photo_url='static/images/maine_coon.jpg', age=4,
               notes='Playful Maine coon', available=True)
-    emma = Pet(name='Emma', species='Dog', 
+    emma = Pet(name='Emma', species='dog', 
                photo_url='static/images/bohemian-shepherd.jpg', age=3,
                notes='Bohemian shepherd', available=True)
-    terry = Pet(name='Terry', species='Porcupine',
+    terry = Pet(name='Terry', species='porcupine',
                 photo_url='static/images/porcupine.jpg',
                 notes="A bit prickly at first, but quickly warms up",
                 age=4, available=True)

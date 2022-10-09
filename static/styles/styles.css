@@ -1,10 +1,18 @@
 /* General Styles */
 
  .flex {
-    display: flex;
+    /* display: flex; */
 }
 
 /* Pet Display */
 
 
 /* New Pet Form */
+
+#newPetForm {
+    width: 50%;
+}
+
+.form-group {
+    width: 20%;
+}

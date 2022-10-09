@@ -1,10 +1,17 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, BooleanField
+from wtforms import StringField, IntegerField, BooleanField, SelectField
+from wtforms.validators import InputRequired, Optional, URL, NumberRange
 
 class AddPetForm(FlaskForm):
-    name = StringField('Name')
-    species = StringField('Species')
-    photo_url = StringField('Photo URL')
-    age = IntegerField('Age')
-    notes = StringField('Notes')
-    available = BooleanField('Available?')
+    name = StringField('Name:', validators=[InputRequired()])
+    species = SelectField('Species:', validators=[InputRequired()])
+    photo_url = StringField('Photo URL:', validators=[Optional(), URL()])
+    age = IntegerField('Age:', validators=[Optional(), NumberRange(min=0, max=30,
+                                                                  message='Age must be between %(min)s and %(max)s')])
+    notes = StringField('Notes:', validators=[Optional()])
+    available = BooleanField('Available?', validators=[InputRequired()])
+    
+class EditPetForm(FlaskForm):
+    photo_url = StringField('Photo URL:', validators=[Optional(), URL()])
+    notes = StringField('Notes:', validators=[Optional()])
+    available = BooleanField('Available?', validators=[InputRequired()])
