@@ -32,7 +32,7 @@ class Pet(db.Model):
     
     def get_pets():
         """Get all pets"""
-        return Pet.query.all()
+        return Pet.query.order_by(Pet.id).all()
         
     def get_pet(id):
         """Get a single pet"""
@@ -47,9 +47,15 @@ class Pet(db.Model):
         db.session.add(pet)
         db.session.commit()
         
-    def edit_pet(detail):
-        """Edit pet and changes"""
-        ...
-        
-    def delete_pet(id):
-        ...
+    def edit_pet(pet, pet_details):
+        """Edit pet and changes entry in DB"""
+        for k, v in pet_details.items():
+            if k == 'photo_url':
+                pet.photo_url = v
+            if k == 'notes':
+                pet.notes = v
+            if k == 'available':
+                pet.available = v
+
+        db.session.add(pet)
+        db.session.commit()
