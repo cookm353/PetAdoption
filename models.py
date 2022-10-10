@@ -53,32 +53,3 @@ class Pet(db.Model):
         
     def delete_pet(id):
         ...
-        
-    @property
-    def display_details(self):
-        """
-        Property for easily displaying pet's details
-        """
-        details = [self.name, self.species]
-        if self.photo_url:
-            details.append(self.photo_url)
-        if self.age:
-            details.append(self.age)
-            
-        return details
-        
-    @property
-    def edit_details(self):
-        """
-        Property for easily editing pet's details
-        """
-        details = []
-        
-        if self.photo_url:
-            details.append(self.photo_url)
-        if self.notes:
-            details.append(self.notes)
-            
-        details.append(self.available)
-        
-        return details
