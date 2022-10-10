@@ -9,7 +9,7 @@ class AddPetForm(FlaskForm):
     age = IntegerField('Age:', validators=[Optional(), NumberRange(min=0, max=30,
                                                                   message='Age must be between %(min)s and %(max)s')])
     notes = StringField('Notes:', validators=[Optional()])
-    available = BooleanField('Available?', validators=[InputRequired()])
+    available = BooleanField('Available?')
     
 class EditPetForm(FlaskForm):
     photo_url = StringField('Photo URL:', validators=[Optional(), URL()])
