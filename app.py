@@ -26,24 +26,33 @@ def add_pet():
     """Form for adding pets"""
     form = AddPetForm()
     
+    species = [(p.species, p.species.title()) for p in Pet.get_pets()]
+    form.species.choices = species
+    
     if form.validate_on_submit():
-        name = form.name.data
-        species = form.name.data
-        photo_url = form.photo_url.data
-        age = form.age.data
-        notes = form.notes.data
-        isAvailable = form.available.data
+        pet_details = {'name': form.name.data, 'species': form.species.data,
+                       'isAvailable': form.available.data}
+        
+        if form.photo_url.data:
+            pet_details['photo_url'] = form.photo_url.data
+        if form.age.data:
+            pet_details['age'] = form.age.data
+        if form.notes.data:
+            pet_details['notes'] = form.notes.data
+        
+        Pet.add_pet(pet_details)
         
         return redirect('/')
     else:
-        species = [(p.species, p.species.title()) for p in Pet.get_pets()]
-        form.species.choices = species
         return render_template('add_pet.html', form=form)
     
-# @app.route('/<pet_id>', methods=['GET', 'POST'])
-# def show_pet_details_and_edit_form():
-#     """Pet detail page"""
-#     form = EditPetForm()
+@app.route('/<pet_id>', methods=['GET', 'POST'])
+def show_pet_details_and_edit_form(pet_id):
+    """Pet detail page"""
+    form = EditPetForm()
+    pet = Pet.get_pet(pet_id)
     
-#     if form.validate_on_submit():
-#         ...
+    if form.validate_on_submit():
+        return redirect(f'/{pet_id}', pet=pet, form=form)
+    else:
+        return render_template('edit_pet.html', form=form, pet=pet)
