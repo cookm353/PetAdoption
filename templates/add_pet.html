@@ -7,9 +7,8 @@
 {% block formFields %}
     {{ form.hidden_tag() }}
 
-    {% for field in form if
-        field.widget.input_type != 'hidden' %}
-        {% if field.label != 'Available?' %}
+    {% for field in form if field.widget.input_type != 'hidden' %}
+        {% if field.label == 'Available?' %}
         <div class="form-group">
             {{ field.label }}
             {{ field(class_='form-control') }}
