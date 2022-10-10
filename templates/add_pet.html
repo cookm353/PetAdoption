@@ -6,18 +6,33 @@
 
 {% block formFields %}
     {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name(class_='form-control') }}
+    </div>
+    <div class="form-group">
+        {{ form.species.label }}
+        {{ form.species(class_='form-control') }}
+    </div>
+    <div class="form-group">
+        {{ form.photo_url.label }}
+        {{ form.photo_url(class_='form-control') }}
+    </div>
+    <div class="form-group">
+        {{ form.age.label }}
+        {{ form.age(class_='form-control') }}
+    </div>
+    <div class="form-group">
+        {{ form.notes.label }}
+        {{ form.notes(class_='form-control') }}
+    </div>
+    <div class="form-group checkbox">
+        {{ form.available.label }}
+        {{ form.available }}
+    </div>
+{% endblock %}
 
-    {% for field in form if field.widget.input_type != 'hidden' %}
-        {% if field.label == 'Available?' %}
-        <div class="form-group">
-            {{ field.label }}
-            {{ field(class_='form-control') }}
-        </div>
-        {% else %}
-        <div class="checkbox">
-            {{ field.label }}
-            {{ field }}
-        </div>
-        {% endif %}
-    {% endfor %}
+{% block formBttn %}
+<button class="btn btn-primary"
+    formaction="/add">Submit</button>
 {% endblock %}
