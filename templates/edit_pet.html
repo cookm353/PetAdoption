@@ -3,18 +3,23 @@
 {% block title %}Edit {{pet.name}}{% endblock %}
 
 {% block otherContent %}
-<div class="petDetails col-md-6 container justify-content-center">
-    <h1>{{pet.name}}</h1>
-    {% if pet.photo_url %}
-    <img src="{{pet.photo_url}}" alt="">
-    {% endif %}
-    <ul>
-        <li class="">{{pet.species.title() }}</li>
-        {% if pet.age %}
-        <li>{{pet.age}} years old</li>
+<div class="container justify-content-center ">
+    <div class="container petDetails col-md-6 justify-content-center">
+        <h1 class="text-center">{{pet.name}}</h1>
+        {% if pet.photo_url %}
+        <img src="{{pet.photo_url}}" alt="">
         {% endif %}
-    </ul>
-    
+        <ul>
+            <li class="">{{pet.species.title() }}</li>
+            {% if pet.age %}
+            <li>{{pet.age}} years old</li>
+            {% endif %}
+            {% if pet.notes %}
+            <li>{{pet.notes}}</li>
+            {% endif %}
+        </ul>
+        
+    </div>
 </div>
 {% endblock %}
 
@@ -39,4 +44,6 @@
 {% block formBttn %}
 <button class="btn btn-primary"
     formaction="/{{pet.id}}">Submit</button>
+<button class="btn btn-success"
+    formaction="/" formmethod="GET">Home</button>
 {% endblock %}
