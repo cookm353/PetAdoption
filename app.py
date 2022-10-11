@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, flash
 from flask_debugtoolbar import DebugToolbarExtension
 from models import connect_db, Pet
 from forms import AddPetForm, EditPetForm
@@ -40,14 +40,13 @@ def add_pet():
             pet_details['age'] = form.age.data
         if form.notes.data:
             pet_details['notes'] = form.notes.data
+            
+        flash('Pet added!')
         
         Pet.add_pet(pet_details)
         
         return redirect('/')
     else:
-        if form.errors:
-            # raise
-            print(form.errors)
         return render_template('add_pet.html', form=form)
     
 @app.route('/<pet_id>', methods=['GET', 'POST'])
@@ -58,9 +57,6 @@ def show_pet_details_and_edit_form(pet_id):
     
     if form.validate_on_submit():
         pet_details = {}
-        for field in form:
-            print('Here!!!')
-            print(field)
         
         if pet.photo_url != form.photo_url.data:
             pet_details['photo_url'] = form.photo_url.data
@@ -69,13 +65,10 @@ def show_pet_details_and_edit_form(pet_id):
         if pet.available != form.available.data:
             pet_details['available'] = form.available.data
             
+        flash(f"{pet.name} edited!")
+        
         Pet.edit_pet(pet, pet_details)        
         
         return redirect(f'/{pet_id}')
     else:
         return render_template('edit_pet.html', form=form, pet=pet)
-    
-    
-@app.route('/favicon.ico')
-def shut_up_favicon():
-    pass
