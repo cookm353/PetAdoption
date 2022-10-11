@@ -55,4 +55,8 @@
     formaction="/{{pet.id}}">Submit</button>
 <button class="btn btn-success"
     formaction="/" formmethod="GET">Home</button>
+
+{% for msg in get_flashed_messages() %}
+<p>{{msg}}</p>
+{% endfor %}
 {% endblock %}
