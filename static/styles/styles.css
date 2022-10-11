@@ -4,6 +4,13 @@
     /* display: flex; */
 }
 
+img {
+    max-width: 400px;
+    width: auto;
+    max-height: 400px;
+    height: auto;
+}
+
 /* Pet Display */
 
 
