@@ -79,7 +79,7 @@
 - [x] Add message flashing to give feedback after a pet is added/edited
 - [x] Divide homepage into listings for pets that are available and ones that aren't
 - [x] Add Bootstrap and a simple theme
-- [ ] Instantiate a pet directly from the dictionary of values from the form
+- [x] Instantiate a pet directly from the dictionary of values from the form
 - [ ] Add a field for a photo upload in addition to URL field
   - [ ] Save file to /static/images
   - [ ] Make it so only one of these can be used
@@ -93,4 +93,4 @@
 - Choices need to be set before the `if form.validate_on_submit()` block
 - Writing tests for post requests for this is a pain
 - Never work directly on the main branch in Git.  Create new branches and merge the changes when they're up and running
-- 
+- Get better with merging branches

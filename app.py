@@ -31,19 +31,20 @@ def add_pet():
     form.species.choices = species
     
     if form.validate_on_submit():
-        pet_details = {'name': form.name.data, 'species': form.species.data,
-                       'isAvailable': form.available.data}
+        # pet_details = {'name': form.name.data, 'species': form.species.data,
+        #                'isAvailable': form.available.data}
         
-        if form.photo_url.data:
-            pet_details['photo_url'] = form.photo_url.data
-        if form.age.data:
-            pet_details['age'] = form.age.data
-        if form.notes.data:
-            pet_details['notes'] = form.notes.data
+        # if form.photo_url.data:
+        #     pet_details['photo_url'] = form.photo_url.data
+        # if form.age.data:
+        #     pet_details['age'] = form.age.data
+        # if form.notes.data:
+        #     pet_details['notes'] = form.notes.data
             
-        flash('Pet added!')
+        # Pet.add_pet(pet_details)
         
-        Pet.add_pet(pet_details)
+        Pet.add_pet(form)
+        flash('Pet added!')
         
         return redirect('/')
     else:

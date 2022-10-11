@@ -38,8 +38,18 @@ class Pet(db.Model):
         """Get a single pet"""
         return Pet.query.get_or_404(id)
         
-    def add_pet(pet_details):
+    def add_pet(add_pet_form):
         """Create a pet and add to DB"""
+        pet_details = {'name': add_pet_form.name.data, 'species': add_pet_form.species.data,
+                    'isAvailable': add_pet_form.available.data}
+        
+        if add_pet_form.photo_url.data:
+            pet_details['photo_url'] = add_pet_form.photo_url.data
+        if add_pet_form.age.data:
+            pet_details['age'] = add_pet_form.age.data
+        if add_pet_form.notes.data:
+            pet_details['notes'] = add_pet_form.notes.data
+        
         pet = Pet(name=pet_details.get('name'), species=pet_details.get('species'),
                   photo_url=pet_details.get('photo_url'), age=pet_details.get('age'),
                   notes=pet_details.get('notes'), available=pet_details.get('isAvailable'))
