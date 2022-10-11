@@ -30,19 +30,7 @@ def add_pet():
     species = [(species, species.title()) for species in unique_species]
     form.species.choices = species
     
-    if form.validate_on_submit():
-        # pet_details = {'name': form.name.data, 'species': form.species.data,
-        #                'isAvailable': form.available.data}
-        
-        # if form.photo_url.data:
-        #     pet_details['photo_url'] = form.photo_url.data
-        # if form.age.data:
-        #     pet_details['age'] = form.age.data
-        # if form.notes.data:
-        #     pet_details['notes'] = form.notes.data
-            
-        # Pet.add_pet(pet_details)
-        
+    if form.validate_on_submit():       
         Pet.add_pet(form)
         flash('Pet added!')
         
