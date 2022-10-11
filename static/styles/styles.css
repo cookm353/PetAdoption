@@ -6,6 +6,9 @@
 
 /* Pet Display */
 
+.isAvailable a {
+    font-weight: bolder;
+}
 
 /* New Pet Form */
 

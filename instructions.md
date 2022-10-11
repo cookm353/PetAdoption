@@ -18,7 +18,7 @@
   - [x] Name
   - [x] Photo, if present (add default pic!)
   - [x] Display 'Available' if pet is available for adoption in bold
-- [ ] Finish styling
+- [x] Style page
 
 ## Step 3: Make Add Pet Form
 
@@ -30,7 +30,7 @@
   - [x] Age
   - [x] Notes
 - [x] Should be at URL path `/add`
-- [ ] Add a link to this on homepage
+- [x] Add a link to this on homepage
 
 ## Step 4: Create Handler for Add Pet Form
 
@@ -47,38 +47,38 @@
 
 ## Step 6: Add Display/Edit Form
 
-- [ ] Make a page displaying info about the pet
-  - [ ] Name
-  - [ ] Species
-  - [ ] Photo (if present)
-  - [ ] Age (if present)
-- [ ] Should also have a form that lets us edit the pet
-  - [ ] Photo URL
-  - [ ] Notes
-  - [ ] Availability
-- [ ] Should be at /[pet_id_number]
-  - [ ] Homepage should link to this
+- [x] Make a page displaying info about the pet
+  - [x] Name
+  - [x] Species
+  - [x] Photo (if present)
+  - [x] Age (if present)
+- [x] Should also have a form that lets us edit the pet
+  - [x] Photo URL
+  - [x] Notes
+  - [x] Availability
+- [x] Should be at /[pet_id_number]
+  - [x] Homepage should link to this
 
 ## Step 7: Handle Edit Form
 
-- [ ] Validate form
-  - [ ] Re-render if it doesn't validate
-  - [ ] Edit pet if it does
-- [ ] Should be a POST request to /[pet_id_number]
+- [x] Validate form
+  - [x] Re-render if it doesn't validate
+  - [x] Edit pet if it does
+- [x] Should be a POST request to /[pet_id_number]
 
 ## Step 8: Clean up Code
 
 - [x] Make sure function names start with a verb
 - [x] Good variable names
-- [ ] Every class or function should have a docstring
-- [ ] Add comments to areas that'd benefit
+- [x] Every class or function should have a docstring
+- [x] Add comments to areas that'd benefit
 - [x] Add a file showing all of the Python requirements
 
 ## Further Study
 
 - [ ] Add message flashing to give feedback after a pet is added/edited
 - [ ] Divide homepage into listings for pets that are available and ones that aren't
-- [ ] Add Bootstrap and a simple theme
+- [x] Add Bootstrap and a simple theme
 - [ ] Instantiate a pet directly from the dictionary of values from the form
 - [ ] Add a field for a photo upload in addition to URL field
   - [ ] Save file to /static/images
@@ -88,5 +88,9 @@
 ## Takeaways
 
 - Just keep the venv folder in the project folder, that's what .gitignore is for
-- Learn Bootstrap.  Seriously.
+- Learn Bootstrap.  Or Tailwind.  Seriously.
 - Keeping the project folder neater with subfolders makes things a lot easier
+- Choices need to be set before the `if form.validate_on_submit()` block
+- Writing tests for post requests for this is a pain
+- Never work directly on the main branch in Git.  Create new branches and merge the changes when they're up and running
+- 
