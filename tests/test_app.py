@@ -44,14 +44,13 @@ class Test_App(TestCase):
             
     def test_adding_pet(self):
         with app.test_client() as client:
-            data = {'name': 'Buster', 'species': 'dog', 'available': True}
+            data = {'name': 'Roscoe', 'species': 'Cat', 'available': True}
             resp = client.post('/add', follow_redirects=True, data=data)
             html = resp.get_data(as_text=True)
             
             self.assertEqual(resp.status_code, 200)
-            self.assertIn('Buster', html)
-            # It SHOULD be redirecting to '/', but it keeps going back to the add pet page
-            # self.assertIn("is available", html)
+            self.assertIn('Roscoe', html)
+            self.assertIn("is available", html)
             
     def test_pet_details_display(self):
         with app.test_client() as client:
@@ -69,4 +68,4 @@ class Test_App(TestCase):
             
             self.assertEqual(resp.status_code, 200)
             self.assertIn('beast', html)
-            # self.assertNotIn('Edit', html)
+            self.assertNotIn('affectionate', html)
