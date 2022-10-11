@@ -1,25 +1,8 @@
 /* General Styles */
 
- .flex {
-    /* display: flex; */
-}
-
 img {
     max-width: 400px;
     width: auto;
     max-height: 400px;
     height: auto;
-}
-
-/* Pet Display */
-
-
-/* New Pet Form */
-
-#newPetForm {
-    /* width: 50%; */
-}
-
-.form-group {
-    /* width: 20%; */
 }
