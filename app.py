@@ -26,7 +26,8 @@ def add_pet():
     """Form for adding pets"""
     form = AddPetForm()
     
-    species = [(p.species, p.species.title()) for p in Pet.get_pets()]
+    unique_species = {pet.species for pet in Pet.get_pets()}
+    species = [(species, species.title()) for species in unique_species]
     form.species.choices = species
     
     if form.validate_on_submit():
@@ -44,6 +45,9 @@ def add_pet():
         
         return redirect('/')
     else:
+        if form.errors:
+            # raise
+            print(form.errors)
         return render_template('add_pet.html', form=form)
     
 @app.route('/<pet_id>', methods=['GET', 'POST'])
@@ -54,6 +58,9 @@ def show_pet_details_and_edit_form(pet_id):
     
     if form.validate_on_submit():
         pet_details = {}
+        for field in form:
+            print('Here!!!')
+            print(field)
         
         if pet.photo_url != form.photo_url.data:
             pet_details['photo_url'] = form.photo_url.data
@@ -67,3 +74,8 @@ def show_pet_details_and_edit_form(pet_id):
         return redirect(f'/{pet_id}')
     else:
         return render_template('edit_pet.html', form=form, pet=pet)
+    
+    
+@app.route('/favicon.ico')
+def shut_up_favicon():
+    pass
