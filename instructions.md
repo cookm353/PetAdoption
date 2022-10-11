@@ -76,13 +76,8 @@
 
 ## Further Study
 
-<<<<<<< HEAD
-- [ ] Add message flashing to give feedback after a pet is added/edited
-- [ ] Divide homepage into listings for pets that are available and ones that aren't
-=======
 - [x] Add message flashing to give feedback after a pet is added/edited
 - [x] Divide homepage into listings for pets that are available and ones that aren't
->>>>>>> furtherStudy
 - [x] Add Bootstrap and a simple theme
 - [ ] Instantiate a pet directly from the dictionary of values from the form
 - [ ] Add a field for a photo upload in addition to URL field

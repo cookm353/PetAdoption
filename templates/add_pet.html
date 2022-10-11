@@ -9,73 +9,43 @@
     <div class="form-group">
         {{ form.name.label }}
         {{ form.name(class_='form-control') }}
-<<<<<<< HEAD
-        {% for error in form.name.errors %}
-            {{ error }}
-=======
         {% for err in form.errors['name'] %}
         <p class="text-danger small">{{err}}</p>
->>>>>>> furtherStudy
         {% endfor %}
     </div>
     <div class="form-group">
         {{ form.species.label }}
         {{ form.species(class_='form-control') }}
-<<<<<<< HEAD
-        {% for error in form.species.errors %}
-            {{ error }}
-=======
         {% for err in form.errors['species'] %}
         <p class="text-danger small">{{err}}</p>
->>>>>>> furtherStudy
         {% endfor %}
     </div>
     <div class="form-group">
         {{ form.photo_url.label }}
         {{ form.photo_url(class_='form-control') }}
-<<<<<<< HEAD
-        {% for error in form.photo_url.errors %}
-            {{ error }}
-=======
         {% for err in form.errors['photo_url'] %}
         <p class="text-danger small">{{err}}</p>
->>>>>>> furtherStudy
         {% endfor %}
     </div>
     <div class="form-group">
         {{ form.age.label }}
         {{ form.age(class_='form-control') }}
-<<<<<<< HEAD
-        {% for error in form.age.errors %}
-            {{ error }}
-=======
         {% for err in form.errors['age'] %}
         <p class="formError small">{{err}}</p>
->>>>>>> furtherStudy
         {% endfor %}
     </div>
     <div class="form-group">
         {{ form.notes.label }}
         {{ form.notes(class_='form-control') }}
-<<<<<<< HEAD
-        {% for error in form.notes.errors %}
-            {{ error }}
-=======
         {% for err in form.errors['notes'] %}
         <p class="formError small">{{err}}</p>
->>>>>>> furtherStudy
         {% endfor %}
     </div>
     <div class="form-group checkbox">
         {{ form.available.label }}
         {{ form.available }}
-<<<<<<< HEAD
-        {% for error in form.errors['available'] %}
-            {{ error }}
-=======
         {% for err in form.errors['available'] %}
         <p class="formError small">{{err}}</p>
->>>>>>> furtherStudy
         {% endfor %}
     </div>
 {% endblock %}
