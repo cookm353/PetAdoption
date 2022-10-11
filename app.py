@@ -26,7 +26,8 @@ def add_pet():
     """Form for adding pets"""
     form = AddPetForm()
     
-    species = [(p.species, p.species.title()) for p in Pet.get_pets()]
+    unique_species = set([p.species for p in Pet.get_pets()])
+    species = [(p, p.title()) for p in unique_species]
     form.species.choices = species
     
     if form.validate_on_submit():
