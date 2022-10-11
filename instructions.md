@@ -47,38 +47,38 @@
 
 ## Step 6: Add Display/Edit Form
 
-- [ ] Make a page displaying info about the pet
-  - [ ] Name
-  - [ ] Species
-  - [ ] Photo (if present)
-  - [ ] Age (if present)
-- [ ] Should also have a form that lets us edit the pet
-  - [ ] Photo URL
-  - [ ] Notes
-  - [ ] Availability
-- [ ] Should be at /[pet_id_number]
-  - [ ] Homepage should link to this
+- [x] Make a page displaying info about the pet
+  - [x] Name
+  - [x] Species
+  - [x] Photo (if present)
+  - [x] Age (if present)
+- [x] Should also have a form that lets us edit the pet
+  - [x] Photo URL
+  - [x] Notes
+  - [x] Availability
+- [x] Should be at /[pet_id_number]
+  - [x] Homepage should link to this
 
 ## Step 7: Handle Edit Form
 
-- [ ] Validate form
-  - [ ] Re-render if it doesn't validate
-  - [ ] Edit pet if it does
-- [ ] Should be a POST request to /[pet_id_number]
+- [x] Validate form
+  - [x] Re-render if it doesn't validate
+  - [x] Edit pet if it does
+- [x] Should be a POST request to /[pet_id_number]
 
 ## Step 8: Clean up Code
 
 - [x] Make sure function names start with a verb
 - [x] Good variable names
-- [ ] Every class or function should have a docstring
-- [ ] Add comments to areas that'd benefit
+- [x] Every class or function should have a docstring
+- [x] Add comments to areas that'd benefit
 - [x] Add a file showing all of the Python requirements
 
 ## Further Study
 
-- [ ] Add message flashing to give feedback after a pet is added/edited
-- [ ] Divide homepage into listings for pets that are available and ones that aren't
-- [ ] Add Bootstrap and a simple theme
+- [x] Add message flashing to give feedback after a pet is added/edited
+- [x] Divide homepage into listings for pets that are available and ones that aren't
+- [x] Add Bootstrap and a simple theme
 - [ ] Instantiate a pet directly from the dictionary of values from the form
 - [ ] Add a field for a photo upload in addition to URL field
   - [ ] Save file to /static/images
