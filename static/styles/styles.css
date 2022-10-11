@@ -1,8 +1,12 @@
 /* General Styles */
 
- .flex {
-    /* display: flex; */
+img {
+    max-width: 400px;
+    width: auto;
+    max-height: 400px;
+    height: auto;
 }
+<<<<<<< HEAD
 
 /* Pet Display */
 
@@ -19,3 +23,5 @@
 .form-group {
     width: 20%;
 }
+=======
+>>>>>>> furtherStudy

@@ -30,14 +30,23 @@
 <div class="form-group">
     {{ form.photo_url.label }}
     {{ form.photo_url(class_='form-control') }}
+    {% for err in form.errors['photo_url'] %}
+        <p class="text-danger small">{{err}}</p>
+        {% endfor %}
 </div>
 <div class="form-group">
     {{ form.notes.label }}
     {{ form.notes(class_='form-control') }}
+    {% for err in form.errors['notes'] %}
+        <p class="text-danger small">{{err}}</p>
+        {% endfor %}
 </div>
 <div class="form-group checkbox">
     {{ form.available.label }}
     {{ form.available }}
+    {% for err in form.errors['available'] %}
+        <p class="text-danger small">{{err}}</p>
+        {% endfor %}
 </div>
 {% endblock formFields %}
 
@@ -46,4 +55,8 @@
     formaction="/{{pet.id}}">Submit</button>
 <button class="btn btn-success"
     formaction="/" formmethod="GET">Home</button>
+
+{% for msg in get_flashed_messages() %}
+<p>{{msg}}</p>
+{% endfor %}
 {% endblock %}
