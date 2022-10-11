@@ -3,7 +3,7 @@ from wtforms import StringField, IntegerField, BooleanField, SelectField
 from wtforms.validators import InputRequired, Optional, URL, NumberRange
 
 class AddPetForm(FlaskForm):
-    name = StringField('Name:', validators=[InputRequired()])
+    name = StringField('Name:', validators=[InputRequired(message='Please enter a name')])
     species = SelectField('Species:', validators=[InputRequired()])
     photo_url = StringField('Photo URL:', validators=[Optional(), URL()])
     age = IntegerField('Age:', validators=[Optional(), NumberRange(min=0, max=30,
